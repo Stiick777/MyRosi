@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat:wght@300;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-image: url('images/fondo.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+/* Pantalla inicial */
+.overlay {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 40px 60px;
+  border-radius: 15px;
+}
+
+.overlay h1 {
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 25px;
+}
+
+#startBtn {
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 30px;
+  background: #ff5fa2;
+  color: white;
+  cursor: pointer;
+}
+
+/* Contenido principal */
+.content {
+  text-align: center;
+  color: black;
+}
+
+
+.hidden {
+  display: none;
+}
+
+/* Título */
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: titleAnim 1.5s ease forwards;
+}
+
+/* Subtítulo */
+.subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  margin-top: 20px;
+  opacity: 0;
+  animation: subtitleAnim 1.5s ease forwards;
+  animation-delay: 2s;
+}
+
+/* Botón corazón */
+.heart-btn {
+  margin-top: 40px;
+  padding: 15px 45px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 50px;
+  background: #ff3f8e;
+  color: white;
+  cursor: pointer;
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards;
+  animation-delay: 4s;
+}
+
+.heart-btn:hover {
+  transform: scale(1.08);
+}
+
+/* Animaciones */
+@keyframes titleAnim {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes subtitleAnim {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+/* ================= CARTA ================= */
+
+.letter-section {
+  position: relative;
+  margin-top: 50px;
+}
+
+/* Fuegos */
+.fire {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 180px;
+  z-index: 1;
+}
+
+.left-fire {
+  left: 20px;
+}
+
+.right-fire {
+  right: 20px;
+}
+
+/* Carta */
+.letter-container {
+  position: relative;
+  width: 520px;      /* MÁS GRANDE */
+  margin: 0 auto;
+  z-index: 2;
+}
+
+
+.letter-img {
+  width: 100%;
+}
+
+/* Texto dentro de la carta */
+.letter-text {
+  position: absolute;
+  top: 95px;          /* Baja el texto */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;    /* Texto un poco más pequeño */
+  color: #4a2c2a;
+  text-align: center;
+  line-height: 1.5;
+}
+
+
+/* HBD */
+.hbd-img {
+  display: block;
+  margin: 40px auto 0;
+  width: 300px;   /* Un poco más grande */
+}
+
+
+/* Pastel */
+.cake-img {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 160px;
+  z-index: 3;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+
+  /* Texto inicial */
+  .overlay h1 {
+    font-size: 1.5rem;
+  }
+
+  /* Hola amor */
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  /* Carta */
+  .letter-container {
+    width: 90%;
+  }
+
+  .letter-text {
+    top: 60px;
+    width: 80%;
+    font-size: 0.95rem;
+  }
+
+  /* Fuegos */
+  .fire {
+    width: 100px;
+    opacity: 0.85;
+  }
+
+  .left-fire {
+    left: 5px;
+  }
+
+  .right-fire {
+    right: 5px;
+  }
+
+  /* HBD */
+  .hbd-img {
+    width: 220px;
+  }
+
+  /* Pastel */
+  .cake-img {
+    width: 110px;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  /* Botones */
+  #startBtn,
+  .heart-btn {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+}
